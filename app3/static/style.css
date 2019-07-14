@@ -1,0 +1,104 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+  padding: 5px;
+}
+a {
+border-radius: 10px;
+}
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+img.stream {
+
+}
+
+.container{
+  padding: 10px;
+  margin: 10px;
+}
+#embedVideo{
+  width: auto;
+  /* height: 300px; */
+  height: auto;
+  float: left;
+  padding: 10px;
+  border: 1px solid grey;
+  /* display: block; */
+
+}
+
+#controls{
+  text-align:  center;
+  background-color: rgb(209, 209, 209);
+  width: auto;
+  height: auto;
+  float: left;
+  border: 1px dotted grey;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.button {
+  border: 5px solid white;
+    width: 150px;
+    background-color: rgb(70, 57, 57); /* Green */
+    /* border: none; */
+    color: white;
+    margin: 10px;
+    padding: 15px 32px;
+    /* padding: 50px 50px; */
+    text-align: center;
+    text-decoration: none;
+    /* display: block; */
+    font-size: 20px;
+    border-radius: 12px;
+    /* border-radius: 8px; */
+    /* -webkit-transition-duration: 0.4s; Safari */
+    /* transition-duration: 0.4s; */
+  
+}
+
+.button:hover {
+  background-color:rgb(43, 34, 34);  /* Green */
+  color: white;
+ 
+}
+
+.buttonUp, .buttonDown{
+  width: 400px;
+  text-align: center;
+  /* background-color: aqua; */
+  border-radius: 12px;
+}
+.buttonLeft, .buttonRight{
+  width: 200px;
+  display: inline-block;
+  border: none;
+  /* background-color: aqua; */
+  border-radius: 12px;
+ }
+ .buttonLeft {
+   text-align: left;
+ }
+ .buttonRight{
+   text-align: right
+ }
+
+/* #buttonUp, #buttonDown{
+  display: block;
+  align-content: center;
+
+} */
+
+

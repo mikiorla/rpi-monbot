@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+  }
+
+#main-content{
+    text-align: center;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    /*    justify-content: space-around; */
+    /* justify-content: space-evenly; */
+    /* justify-content: space-between; */
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid red;
+}
+#video{
+    flex: 70%;
+    margin: 5px;
+    width: auto;
+    height: auto;
+    border: 1px solid red;
+}
+#controls{
+    flex: 30%;
+    margin: 5px;
+    width: auto;
+    height: auto;
+    border: 1px solid blue;
+}
+
+.button {
+    border: 5px solid white;
+      width: 150px;
+      background-color: rgb(70, 57, 57); /* Green */
+      color: white;
+      margin: 5px;
+      padding: 15px 32px;
+            text-decoration: none;
+     
+      font-size: 20px;
+      border-radius: 12px;
+      /* border-radius: 8px; */
+      /* -webkit-transition-duration: 0.4s; Safari */
+      /* transition-duration: 0.4s; */
+    
+  }
+
+  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    #main-content  {   
+      flex-direction: column;
+    }
+  }

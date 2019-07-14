@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Web controling RPi camera">
+    <meta name="keywords" content="web camera control, rasperi pi cam control">
+    <meta name="author" content="Milan Orlovic">
+
+    <title> Buttons model</title>
+    <link rel="stylesheet" href="../static/style2.css">
+</head>
+
+<body>
+    <header>
+
+        <div class="container" style="background-color:rgb(230, 230, 230)">
+            <div id="branding">
+
+                <p> ... in header, in div branding</p>
+            </div>
+
+            
+        </div>
+
+
+
+    </header>
+<section id="main-content">
+    <div id="video">
+        <h1> video div </h1>
+        <p>some text</p>
+        <img class="stream" src="{{ url_for('video_feed') }}">
+  
+    </div>
+
+    <div id="controls">
+        <h1> controls div </h1>
+        <p>some text</p>
+               
+        <button id="buttonUp" class="button1">UP</button> <br>
+        <button id="buttonLeft" class="button1">LEFT</button> <button id="buttonRight" class="button1">RIGHT</button><br>
+        <button id="buttonDown" class="button1">DOWN</button><br>
+
+
+    </div>
+    
+
+</section>
+
+
+
+
+
+
+
+    <div id="footer">
+        <p> Footer </p>
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+
+
+        
+                
+ 
