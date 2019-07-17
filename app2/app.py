@@ -2,7 +2,7 @@ import os
 import time
 import datetime
 from importlib import import_module
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, request
 import psutil  # sudo pip3 install psutil
 import RPi.GPIO as GPIO
 
@@ -10,15 +10,14 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
 # GPIO.RPI_INFO
 
-# chan_list = [11,13]
-# GPIO.setup(chan_list, GPIO.OUT)
-# GPIO.output(chan_list, GPIO.LOW)
+chan_list = [11,13]
+GPIO.setup(chan_list, GPIO.OUT)
+GPIO.output(chan_list, GPIO.LOW)
 
 pins = {
    11: {'name': 'GPIO 11', 'state': GPIO.LOW},
    13: {'name': 'GPIO 13', 'state': GPIO.LOW}
    }
-
 
 # import camera driver
 if os.environ.get('CAMERA'):
@@ -29,18 +28,15 @@ else:
 # Raspberry Pi camera module (requires picamera package)
 # from camera_pi import Camera
 
-
 def measure_temp():
         temp = os.popen("vcgencmd measure_temp").readline()
         return (temp.replace("temp=", ""))
-
 
 def get_cpu_usage():
         # return str(os.popen("top -n1 | awk '/Cpu\(s\):/ {print $2}'").readline().strip(\))
         cpu_usage = psutil.cpu_percent()
         return (str(cpu_usage))
         # return ("2")
-
 
 app = Flask(__name__)
 @app.route("/")
@@ -94,6 +90,29 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
+#@app.route('/setGPIO', methods=['POST','GET'])
+@app.route('/setGPIO/<what>', methods=['POST'])
+def setGPIO(what):
+   if what == 'on':
+      GPIO.output(13,GPIO.HIGH)
+   elif what == 'off':
+      GPIO.output(13,GPIO.LOW)
+   else: GPIO.output(13,GPIO.LOW)
+   
+   if (GPIO.input(13) == 0):
+      answer = "GPIO13 is OFF"
+   else:
+      answer  = "GPIO13 is ON"
+   return answer
+
+@app.route('/checkGPIO', methods=['GET'])
+def checkGPIO():
+   if (GPIO.input(13) == 0):
+      answer = "GPIO13 is OFF"
+   else:
+      answer  = "GPIO13 is ON"
+   return answer
+   #return "Hello"
 
 
 

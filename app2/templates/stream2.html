@@ -10,20 +10,21 @@
 
     <title> Buttons model</title>
     <link rel="stylesheet" href="../static/style2.css">
+    <script src="../static/js/setGPIO.js"></script>
 </head>
 
 <body>
     <header>
 
-        <div class="container" style="background-color:rgb(230, 230, 230)">
-            <div id="branding">
-                <p> In header, in div branding</p>
-            </div>
-        </div>
+        <!-- <div class="container" style="background-color:rgb(230, 230, 230)"> -->
+            <!-- <div id="branding"> -->
+                <!-- <p> In header, in div branding</p> -->
+            <!-- </div> -->
+        <!-- </div> -->
     </header>
     <section id="main-content">
         <div id="video">
-            <h1> video div </h1>
+            <!-- <h1> video div </h1> -->
             <!-- <p>some text</p>  -->
             <img class="stream" src="{{ url_for('video_feed') }}">
 
@@ -32,14 +33,15 @@
         <div id="controls">
             <h1> controls div </h1>
             
-            <button id="buttonUp" class="button1">UP</button> <br>
-            <button id="buttonLeft" class="button1">LEFT</button> <button id="buttonRight" class="button1">RIGHT</button><br>
-            <button id="buttonDown" class="button1">DOWN</button><br>
-                        
-            <p> {{pins}} is: {{ gpio11State}}</p>
-            <p>GPIO 13 is: {{ gpio13State}}</p>
+           <!-- <button id="buttonUp" class="button1" onclick="setON()" >UP</button> <br> -->
+           <button id="buttonUp" class="button1" onmousedown=buttonPressed() onmouseup=buttonReleased() >UP</button> <br> 
+           <button id="buttonLeft" class="button1">LEFT</button> <button id="buttonRight" class="button1">RIGHT</button><br>
+           <button id="buttonDown" class="button1" onclick="setOFF()">DOWN</button><br> 
+           
+           <p> <span id="gpioStatusID11"> waiting for JS </span> </p>
+           <script src="../static/js/gpioStatus-notexist.js"></script>
+          
         </div>
-
 
     </section>
 
