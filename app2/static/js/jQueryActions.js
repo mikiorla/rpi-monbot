@@ -16,4 +16,22 @@
 // alert(message);
 
 //window.location.reload(true)
- 
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
+
+$( window ).load(function() {
+     // Run code
+     var prev = document.getElementById("button-forward").style.background;
+     sleep(2000);
+    document.getElementById("button-forward").style.background="#28609";
+    sleep(2000);
+    document.getElementById("button-forward").style.background=prev;
+   
+
+  });
