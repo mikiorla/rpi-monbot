@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width initial-scale=1" >
     <meta name="description" content="Web controling RPi camera">
     <meta name="keywords" content="web camera control, rasperi pi cam control">
     <meta name="author" content="Milan Orlovic">
@@ -11,6 +11,9 @@
     <title> Buttons model</title>
     <link rel="stylesheet" href="../static/style2.css">
     <script src="../static/js/setGPIO.js"></script>
+    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../static/js/jQueryActions.js"></script> -->
 </head>
 
 <body>
@@ -31,15 +34,17 @@
         </div>
 
         <div id="controls">
-            <h1> controls div </h1>
+            <!-- <h1> controls div </h1> -->
             
            <!-- <button id="buttonUp" class="button1" onclick="setON()" >UP</button> <br> -->
-           <button id="buttonUp" class="button1" onmousedown=buttonPressed() onmouseup=buttonReleased() >UP</button> <br> 
-           <button id="buttonLeft" class="button1">LEFT</button> <button id="buttonRight" class="button1">RIGHT</button><br>
-           <button id="buttonDown" class="button1" onclick="setOFF()">DOWN</button><br> 
+           <!-- <button id="buttonUp" class="button" onmousedown=buttonPressed() onmouseup=buttonReleased() onmouseleave=buttonReleased() ontouchstart=buttonPressed() ontouchend=buttonReleased()>UP</button> <br>  -->
+           <!-- <button id="buttonUp" class="button" onmousedown=buttonPressed() onmouseup=buttonReleased() onmouseleave=buttonReleased()>UP</button> <br>  -->
+           <button id="buttonUp" class="button" ontouchstart=buttonPressed() ontouchend=buttonReleased() ontouchcancel=buttonReleased()>UP</button> <br> 
+           <button id="buttonLeft" class="button">LEFT</button> <button id="buttonRight" class="button">RIGHT</button><br>
+           <button id="buttonDown" class="button" onclick="setOFF()">DOWN</button><br> 
            
            <p> <span id="gpioStatusID11"> waiting for JS </span> </p>
-           <script src="../static/js/gpioStatus-notexist.js"></script>
+           <!-- <script src="../static/js/gpioStatus-notexist.js"></script> -->
           
         </div>
 

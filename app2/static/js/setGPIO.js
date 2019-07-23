@@ -1,3 +1,77 @@
+//document.getElementById("video").focus();
+ 
+
+window.addEventListener("keydown", event => {
+    if (event.keyCode == "38") {
+        // alert('Up key pressed');
+        setON();
+    }
+  });
+  window.addEventListener("keyup", event => {
+    if (event.keyCode == "38") {
+        //alert('Up key depressed');
+        setOFF();
+    }
+  });
+
+
+// document.onkeydown = function(event) {
+//     switch (event.keyCode) {
+//        case 37:
+//             alert('Left key pressed');
+//           break;
+//        case 38:
+//             alert('Up key pressed');
+//             //setON();
+//           break;
+//        case 39:
+//             alert('Right key pressed');
+//           break;
+//        case 40:
+//             alert('Down key pressed');
+//             //setOFF();
+//           break;
+//     }
+// };
+
+
+
+// document.onkeyup = function(event) {
+//      switch (event.keyCode) {
+//     //    case 37:
+//     //         alert('Left key pressed');
+//     //       break;
+//         case 38:
+//             alert = function() {};
+//     //         //setON();
+//     //       break;
+//     //    case 39:
+//     //         alert('Right key pressed');
+//     //       break;
+//     //    case 40:
+//     //         alert('Down key pressed');
+//     //         //setOFF();
+//            break;
+//     //}
+
+    
+// };
+
+
+
+
+// document.onkeydown = function(event) {
+//     if (event.keyCode == '38')
+//     {
+//         setON()
+//         // while (event.keyCode == '38')
+//         // {setON();}
+//     }
+//     else {setOFF()}
+    
+// }
+
+
 
 function setGPIO(){
     var gpiostatus = document.getElementById( "gpioStatusID11" );
@@ -46,3 +120,4 @@ function buttonReleased() {
     Http.send();
     Http.onreadystatechange = (e) => { gpiostatus.innerHTML = Http.responseText }
 }
+
